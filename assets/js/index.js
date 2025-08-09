@@ -69,27 +69,33 @@ h1El.classList.add('newsTitle');
 h1El.textContent = news.title;
 headerEl.append(h1El);
 
-const divEl = document.createElement('div');
-divEl.classList.add('buttons');
+function createDivBtnEl() {
+  const divEl = document.createElement('div');
+  divEl.classList.add('buttons');
+
+  const likeBtnEl = document.createElement('button');
+  likeBtnEl.classList.add('likeIcon');
+  divEl.append(likeBtnEl);
+
+  const likeBtnIcon = document.createElement('i');
+  likeBtnIcon.classList.add('fa-solid');
+  likeBtnIcon.classList.add('fa-heart');
+  likeBtnEl.append(likeBtnIcon);
+
+  const deleteBtnEl = document.createElement('button');
+  deleteBtnEl.classList.add('trashIcon');
+  divEl.append(deleteBtnEl);
+
+  const deleteBtnIcon = document.createElement('i');
+  deleteBtnIcon.classList.add('fa-solid');
+  deleteBtnIcon.classList.add('fa-trash');
+  deleteBtnEl.append(deleteBtnIcon);
+
+  return divEl;
+}
+
+const divEl = createDivBtnEl(news);
 headerEl.append(divEl);
-
-const likeBtnEl = document.createElement('button');
-likeBtnEl.classList.add('likeIcon');
-divEl.append(likeBtnEl);
-
-const likeBtnIcon = document.createElement('i');
-likeBtnIcon.classList.add('fa-solid');
-likeBtnIcon.classList.add('fa-heart');
-likeBtnEl.append(likeBtnIcon);
-
-const deleteBtnEl = document.createElement('button');
-deleteBtnEl.classList.add('trashIcon');
-divEl.append(deleteBtnEl);
-
-const deleteBtnIcon = document.createElement('i');
-deleteBtnIcon.classList.add('fa-solid');
-deleteBtnIcon.classList.add('fa-trash');
-deleteBtnEl.append(deleteBtnIcon);
 
 const h2El = document.createElement('h2');
 h2El.classList.add('newsCategory');
