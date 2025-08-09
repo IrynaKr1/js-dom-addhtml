@@ -11,6 +11,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <script defer src="assets/js/index.js"></script>
@@ -19,9 +25,18 @@
   <body>
     <article class="newsArticle">
       <header class="newsHeader">
+        <img
+          class="backgroundImg"
+          src="https://cdn.mos.cms.futurecdn.net/yS8AdDkWFHzDhEjycLwkc9-970-80.jpg.webp"
+          alt="background img"
+        />
         <h1 class="newsTitle">
           Minecraft's new frogs were briefly swallowing goats whole
         </h1>
+        <div class="buttons">
+          <button class="likeIcon"><i class="fa-solid fa-heart"></i></button>
+          <button class="trashIcon"><i class="fa-solid fa-trash"></i></button>
+        </div>
       </header>
       <h2 class="newsCategory">Minecraft</h2>
       <p class="newsText">
@@ -35,10 +50,6 @@
         back in January. Their hunger was, as some players realized, insatiable.
       </p>
       <p class="newsDate">2022-02-02</p>
-      <div class="buttons">
-        <button class="likeIcon"><i class="fa-solid fa-heart"></i></button>
-        <button class="trashIcon"><i class="fa-solid fa-trash"></i></button>
-      </div>
     </article>
   </body>
 </html>

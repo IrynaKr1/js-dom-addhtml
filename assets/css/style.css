@@ -1,0 +1,126 @@
+:root {
+  --header-font: 'Quantico', sans-serif;
+  --content-font: 'Montserrat', sans-serif;
+}
+
+body {
+  font-size: 16px;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsArticle {
+  font-family: var(--content-font);
+  width: 100%;
+  background: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.newsHeader {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.backgroundImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.newsTitle {
+  position: relative;
+  z-index: 3;
+  font-family: var(--header-font);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0 20px;
+  line-height: 1.2;
+}
+
+.newsCategory {
+  font-family: var(--content-font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 15px 20px 5px;
+  text-align: left;
+  margin: 0;
+}
+
+.newsText {
+  font-family: var(--content-font);
+  line-height: 1.6;
+  color: #333;
+  padding: 0 20px 15px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.newsDate {
+  font-family: var(--content-font);
+  font-size: 0.85rem;
+  color: #999;
+  padding: 5px 20px;
+  text-align: right;
+  font-style: italic;
+}
+
+.buttons {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+  z-index: 4;
+}
+
+.buttons button {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.likeIcon:hover {
+  background: rgba(231, 76, 60, 0.8);
+  transform: scale(1.1);
+}
+
+.trashIcon:hover {
+  background: rgba(127, 140, 141, 0.8);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .newsTitle {
+    font-size: 1.4rem;
+    padding: 0 15px;
+  }
+
+  .newsHeader {
+    height: 150px;
+  }
+}
