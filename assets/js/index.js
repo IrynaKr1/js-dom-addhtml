@@ -64,6 +64,12 @@ function createDeleteBtnElement() {
   deleteBtnIcon.classList.add('fa-solid');
   deleteBtnIcon.classList.add('fa-trash');
   deleteBtnEl.append(deleteBtnIcon);
+
+  function deleteArticle(e) {
+    e.target.closest('.newsArticle').remove();
+  }
+  deleteBtnEl.onclick = deleteArticle;
+
   return deleteBtnEl;
 }
 
