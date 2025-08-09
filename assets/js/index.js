@@ -73,25 +73,32 @@ function createDivBtnEl() {
   const divEl = document.createElement('div');
   divEl.classList.add('buttons');
 
+  divEl.append(createlikeBtnEl());
+  divEl.append(createDeleteBtnElement());
+
+  return divEl;
+}
+
+function createlikeBtnEl() {
   const likeBtnEl = document.createElement('button');
   likeBtnEl.classList.add('likeIcon');
-  divEl.append(likeBtnEl);
 
   const likeBtnIcon = document.createElement('i');
   likeBtnIcon.classList.add('fa-solid');
   likeBtnIcon.classList.add('fa-heart');
   likeBtnEl.append(likeBtnIcon);
+  return likeBtnEl;
+}
 
+function createDeleteBtnElement() {
   const deleteBtnEl = document.createElement('button');
   deleteBtnEl.classList.add('trashIcon');
-  divEl.append(deleteBtnEl);
 
   const deleteBtnIcon = document.createElement('i');
   deleteBtnIcon.classList.add('fa-solid');
   deleteBtnIcon.classList.add('fa-trash');
   deleteBtnEl.append(deleteBtnIcon);
-
-  return divEl;
+  return deleteBtnEl;
 }
 
 const divEl = createDivBtnEl(news);
