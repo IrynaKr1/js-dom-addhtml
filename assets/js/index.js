@@ -54,9 +54,14 @@ const headerEl = document.createElement('header');
 headerEl.classList.add('newsHeader');
 articleEl.append(headerEl);
 
-const imgEl = document.createElement('img');
-imgEl.classList.add('backgroundImg');
-imgEl.src = news.headerBgSrc;
+function createBgImg({ headerBgSrc }) {
+  const imgEl = document.createElement('img');
+  imgEl.src = headerBgSrc;
+  imgEl.classList.add('backgroundImg');
+  return imgEl;
+}
+
+const imgEl = createBgImg(news);
 headerEl.append(imgEl);
 
 const h1El = document.createElement('h1');
