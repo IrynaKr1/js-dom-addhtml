@@ -122,7 +122,7 @@ body {
 }
 
 .likeIcon.liked {
-  background: rgba(231, 76, 60, 0.8);
+  color: rgba(231, 76, 60, 0.8);
 }
 
 .trashIcon:hover {

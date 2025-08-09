@@ -53,6 +53,13 @@ function createlikeBtnEl() {
   likeBtnIcon.classList.add('fa-solid');
   likeBtnIcon.classList.add('fa-heart');
   likeBtnEl.append(likeBtnIcon);
+
+  function toggleLike(e) {
+    e.stopPropagation();
+    likeBtnEl.classList.toggle('liked');
+  }
+  likeBtnEl.onclick = toggleLike;
+
   return likeBtnEl;
 }
 
@@ -66,6 +73,7 @@ function createDeleteBtnElement() {
   deleteBtnEl.append(deleteBtnIcon);
 
   function deleteArticle(e) {
+    e.stopPropagation();
     e.target.closest('.newsArticle').remove();
   }
   deleteBtnEl.onclick = deleteArticle;
@@ -131,6 +139,16 @@ function createArticleEl(news) {
   const date = createDateEl(news);
 
   articleEl.append(header, category, text, date);
+
+  function selectArticle(e) {
+    if (!e.target.closest('.buttons')) {
+      document.querySelectorAll('.newsArticle').forEach((a) => {
+        a.classList.remove('selected');
+      });
+      articleEl.classList.add('selected');
+    }
+  }
+  articleEl.onclick = selectArticle;
   return articleEl;
 }
 
