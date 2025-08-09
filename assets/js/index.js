@@ -61,24 +61,6 @@ function createBgImg({ headerBgSrc }) {
   return imgEl;
 }
 
-const imgEl = createBgImg(news);
-headerEl.append(imgEl);
-
-const h1El = document.createElement('h1');
-h1El.classList.add('newsTitle');
-h1El.textContent = news.title;
-headerEl.append(h1El);
-
-function createDivBtnEl() {
-  const divEl = document.createElement('div');
-  divEl.classList.add('buttons');
-
-  divEl.append(createlikeBtnEl());
-  divEl.append(createDeleteBtnElement());
-
-  return divEl;
-}
-
 function createlikeBtnEl() {
   const likeBtnEl = document.createElement('button');
   likeBtnEl.classList.add('likeIcon');
@@ -101,20 +83,51 @@ function createDeleteBtnElement() {
   return deleteBtnEl;
 }
 
-const divEl = createDivBtnEl(news);
-headerEl.append(divEl);
+function createDivBtnEl() {
+  const divEl = document.createElement('div');
+  divEl.classList.add('buttons');
 
-const h2El = document.createElement('h2');
-h2El.classList.add('newsCategory');
-h2El.textContent = news.category;
-articleEl.append(h2El);
+  divEl.append(createlikeBtnEl());
+  divEl.append(createDeleteBtnElement());
 
-const pTextElement = document.createElement('p');
-pTextElement.classList.add('newsText');
-pTextElement.textContent = news.body;
-articleEl.append(pTextElement);
+  return divEl;
+}
 
-const pDateElement = document.createElement('p');
-pDateElement.classList.add('newsDate');
-pDateElement.textContent = news.date;
-articleEl.append(pDateElement);
+function createTitleEl({ title }) {
+  const h1El = document.createElement('h1');
+  h1El.classList.add('newsTitle');
+  h1El.textContent = title;
+  return h1El;
+}
+
+function createCategoryEl({ category }) {
+  const h2El = document.createElement('h2');
+  h2El.classList.add('newsCategory');
+  h2El.textContent = category;
+  return h2El;
+}
+
+function createTextEl({ body }) {
+  const pTextElement = document.createElement('p');
+  pTextElement.classList.add('newsText');
+  pTextElement.textContent = body;
+  return pTextElement;
+}
+
+function createDateEl({ date }) {
+  const pDateElement = document.createElement('p');
+  pDateElement.classList.add('newsDate');
+  pDateElement.textContent = date;
+  return pDateElement;
+}
+headerEl.append(createBgImg(news));
+
+headerEl.append(createTitleEl(news));
+
+headerEl.append(createDivBtnEl(news));
+
+articleEl.append(createCategoryEl(news));
+
+articleEl.append(createTextEl(news));
+
+articleEl.append(createDateEl(news));
