@@ -92,17 +92,17 @@ function createDivBtnEl() {
 }
 
 function createTitleEl({ title }) {
-  const h1El = document.createElement('h1');
-  h1El.classList.add('newsTitle');
-  h1El.textContent = title;
-  return h1El;
+  const h2El = document.createElement('h2');
+  h2El.classList.add('newsTitle');
+  h2El.textContent = title;
+  return h2El;
 }
 
 function createCategoryEl({ category }) {
-  const h2El = document.createElement('h2');
-  h2El.classList.add('newsCategory');
-  h2El.textContent = category;
-  return h2El;
+  const categoryEl = document.createElement('p');
+  categoryEl.classList.add('newsCategory');
+  categoryEl.textContent = category;
+  return categoryEl;
 }
 
 function createTextEl({ body }) {
