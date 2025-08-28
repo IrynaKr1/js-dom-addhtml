@@ -141,19 +141,16 @@ function createArticleEl(news) {
   articleEl.append(header, category, text, date);
 
   function selectArticle(e) {
-  if (!e.target.closest('.buttons')) {
-   
     if (articleEl.classList.contains('selected')) {
       articleEl.classList.remove('selected');
       return;
     }
-    
+
     document.querySelectorAll('.newsArticle').forEach((a) => {
       a.classList.remove('selected');
     });
     articleEl.classList.add('selected');
   }
-}
   articleEl.onclick = selectArticle;
   return articleEl;
 }
